@@ -1,9 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaSearchengin } from "react-icons/fa";
-import mock from "../../assets/mocks/data";
 import Pokemon from "../../components/Pokemon";
 
-const Home = () => {
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
+
+
+function PokemonsItems() {
+    const { loading, error, data } = useQuery(gql`
+    {
+        pokemons(first: 151){
+            id
+            number
+            name
+            image
+        }
+    }
+    `);
+        
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+        
+    return data.pokemons.map((response) => (
+        <Pokemon 
+            key={response.id} 
+            name={response.name}
+            img={response.image}
+        />
+    ))
+  }
+
+  
+
+const Home = (props) => {
+
+    useEffect(() => {
+
+      }, []);
+    
+
     return (
         <section className="page-home">
             <form className="page-home__form" action="">
@@ -12,18 +47,9 @@ const Home = () => {
             </form>
             <section>
 
-                {console.log(mock)}
 
             <div className="poke-list">
-                {mock.data.pokemons.map((response) => {     
-                    return(
-                        <Pokemon 
-                            key={response.id} 
-                            name={response.name}
-                            img={response.image}
-                        />
-                    )
-                })}
+                <PokemonsItems />
             </div>
 
             </section>
