@@ -6,10 +6,12 @@ import Footer from "./components/Footer";
 const Body = props => {
   return (
     <>
-      <div className="page-content">
-        <main className="page-content__body">{props.children}</main>
+      <main className="page-content">
+          <section class="page-content__card">
+            {props.children}
+          </section>
         <Footer />
-      </div>
+      </main>
     </>
   );
 };

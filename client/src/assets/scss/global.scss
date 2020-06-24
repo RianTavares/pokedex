@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: $ONE_LIGHT_GRAY;
+}
+
 p {
   font-size: 18px;
 }
@@ -14,9 +18,38 @@ a {
 }
 
 .page-content {
-  background-color: $ONE_LIGHT_GRAY;
   width: 100%;
   min-height: 100vh;
-
   position: relative;
+
+  &__card {
+    @include margin-page;
+    position: absolute;
+    background: white;
+    min-height: 450px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 230px;
+
+    animation-name: up;
+    animation-duration: 700ms;
+
+    @media #{$BREAKPOINT-DESK} {
+      min-height: 400px;
+    }
+  }
+
+  @keyframes up {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 }
