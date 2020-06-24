@@ -1,0 +1,37 @@
+.page-home {
+  &__form {
+    * {
+      box-sizing: border-box;
+    }
+  }
+  &__form input[type="text"] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 90%;
+    background: #f1f1f1;
+    margin-bottom: 30px;
+  }
+
+  &__form button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: $BLUE;
+    color: white;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+
+  &__form button:hover {
+    background: $NAVY_BLUE;
+  }
+
+  &__form::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
