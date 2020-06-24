@@ -6,7 +6,7 @@
   "scripts": {
     "heroku-postbuild": "cd client && npm install && npm run build",
     "client": "cd client && npm start",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"nodemon server.js\" \"npm run client\""
   },
   "repository": {
