@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.page-content {
+  background-color: $ONE_LIGHT_GRAY;
+  width: 100%;
+  min-height: 100vh;
+
+  position: relative;
+}

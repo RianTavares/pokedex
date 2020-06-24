@@ -1,0 +1,53 @@
+/*
+|--------------------------------------------------------------------------
+| APP color schema
+|--------------------------------------------------------------------------
+*/
+
+/* Logo Colors */
+$YELLOW: #ffcb05;
+$BLUE: #3d7dca;
+$NAVY_BLUE: #003a70;
+
+/* page color schema */
+$LIGHT_YELLOW: #f6e652;
+$ONE_YELLOW: #f6bd20;
+$TWO_YELLOW: #9c5200;
+$THREE_YELLOW: #de9400;
+$BROWN: #623108;
+$ONE_LIGHT_GRAY: #737383;
+$LIGHT_GRAY: #41414a;
+$DARK_GRAY: #292929;
+$SAND: #fff6a4;
+$RED: #c52018;
+$PINK: #e65a41;
+$GREEN: #a4de52;
+$TWO_GREEN: #73a431;
+
+/*
+|--------------------------------------------------------------------------
+| BREAKPOINTS
+|--------------------------------------------------------------------------
+*/
+
+// Usage example:  @media #{$media-tablet}
+
+$BREAKPOINT-DESK: "only screen and (min-width: 1280px)";
+$BREAKPOINT-TABLET-LAND: "only screen and (min-width: 975px)";
+$BREAKPOINT-TABLET: "only screen and (min-width: 600px)";
+$BREAKPOINT-MOBILE-LAND: "only screen and (min-width: 480px)";
+
+/*
+|--------------------------------------------------------------------------
+| MIXINS
+|--------------------------------------------------------------------------
+*/
+
+@mixin margin-page {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+
+  @media #{$BREAKPOINT-DESK} {
+    max-width: 1000px;
+  }
+}

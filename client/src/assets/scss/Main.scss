@@ -1,5 +1,6 @@
 // general vars and scss confs
+@import "./conf";
+@import "./global.scss";
 
 // components
-
-// pages
+@import "../../components/Footer/styles.scss";

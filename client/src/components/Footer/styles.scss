@@ -1,0 +1,103 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 200px;
+  background-color: $RED;
+
+  &__social {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+
+    a:last-child {
+      margin-left: 30px;
+    }
+  }
+
+  &__draw {
+    margin-top: 30px;
+    position: relative;
+
+    &__circle1 {
+      background: radial-gradient(
+        circle closest-side,
+        #000 0,
+        #000 98%,
+        transparent 100%
+      );
+      width: 80px;
+      height: 80px;
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: -36px;
+
+      &__circle2 {
+        background: radial-gradient(
+          circle closest-side,
+          #fff 0,
+          #fff 98%,
+          transparent 100%
+        );
+        width: 60px;
+        height: 60px;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 9px;
+
+        &__inner {
+          background: transparent;
+          width: 40px;
+          height: 40px;
+          z-index: 2;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          top: 9px;
+          border: solid 2px black;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &__line {
+      width: 100%;
+      height: 20px;
+      background-color: black;
+    }
+  }
+
+  &__copyright {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background: white;
+    height: 86px;
+    z-index: 1;
+
+    p {
+      position: absolute;
+      bottom: 5px;
+      text-align: center;
+      width: 100%;
+      color: $LIGHT_GRAY;
+      a {
+        color: $LIGHT_GRAY;
+      }
+    }
+  }
+}
