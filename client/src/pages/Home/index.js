@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaSearchengin } from "react-icons/fa";
+import mock from "../../assets/mocks/data";
 
 const Home = () => {
     return (
@@ -8,7 +9,19 @@ const Home = () => {
                 <input type="text" placeholder="Search.." name="search" />
                 <button type="submit"><FaSearchengin size="17"/></button>
             </form>
-            <section>Itens</section>
+            <section>
+
+                {console.log(mock)}
+
+            <div className="poke-list">
+                {mock.data.pokemons.map((response) => {     
+                    return(
+                        <div>{response.name}</div>
+                    )
+                })}
+            </div>
+
+            </section>
         </section>
     )
 }
