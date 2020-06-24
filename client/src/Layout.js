@@ -7,7 +7,7 @@ const Body = props => {
   return (
     <>
       <main className="page-content">
-          <section class="page-content__card">
+          <section className="page-content__card">
             {props.children}
           </section>
       </main>
