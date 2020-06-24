@@ -10,8 +10,8 @@ const Body = props => {
           <section class="page-content__card">
             {props.children}
           </section>
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 };
