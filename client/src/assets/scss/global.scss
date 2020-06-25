@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
+
 /*=== GENERAL ===*/
 
 * {
@@ -9,6 +11,7 @@
 
 body {
   background-color: $ONE_LIGHT_GRAY;
+  font-family: "Roboto", sans-serif;
 }
 
 p {
