@@ -18,7 +18,7 @@ function PokemonsItems() {
     }
     `);
         
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div className="loading"><div className="loading__pokeball"></div></div>;
     if (error) return <p>Error :(</p>;
         
     return data.pokemons.map((response) => (
