@@ -55,9 +55,12 @@ a {
 }
 
 /*=== RIBBON ===*/
-
+.ribbon {
+  display: none;
+}
 @media #{$BREAKPOINT-DESK} {
   .ribbon {
+    display: block;
     position: fixed;
     padding: 5px 45px;
     width: 239px;
