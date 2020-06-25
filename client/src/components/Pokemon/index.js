@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa';
+import pokeTypes from '../../assets/mocks/pokeTypes';
 
 const Pokemon = (props) => {
 
-    const [cardColor, setCardColor] = useState('');
-
-    const randomThemeColor = () => {
-        const colors = ["#73a431", "#de9400", "#623108", "#e65a41", "#4e4d4b", "#c52018", "#003a70"];
-        let selectedColor = colors[Math.floor(Math.random()*colors.length)];
-        return selectedColor;
-    }
-
-    useEffect(() => {
-        setCardColor(randomThemeColor());
-      }, []);
-    
+    const pokemonId = props.id;
+    const tipo = (props.type).toLowerCase();
+    const cardColor = pokeTypes[`${tipo}`] ? pokeTypes[`${tipo}`] : '#003a70';
 
     return(
         <div className="poke-list__item" style={{borderColor: `${cardColor}`}}>
             <div className="poke-list__item__img-container">
                 <img className="poke-list__item__img-container__img" src={props.img} alt={`imagem do ${props.name}`}/>
             </div>
-            <div className="poke-list__item__info" style={{backgroundColor: `${cardColor}`}}>
-                <p className="poke-list__item__info__name">{props.name}</p>
-            </div>
+            <Link className="poke-list__item__button" to={pokemonId}>
+                <div className="poke-list__item__button__info" style={{backgroundColor: `${cardColor}`}}>
+                    <p className="poke-list__item__button__info__name">{props.name}</p>
+                    <div><FaEye /></div>
+                </div>
+            </Link>
         </div>
     )
 }

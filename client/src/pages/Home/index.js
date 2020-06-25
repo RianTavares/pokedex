@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { FaSearchengin } from "react-icons/fa";
-import Pokemon from "../../components/Pokemon";
+import React from 'react'
+import { FaSearchengin } from 'react-icons/fa';
+import Pokemon from '../../components/Pokemon';
 
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
@@ -14,6 +14,7 @@ function PokemonsItems() {
             number
             name
             image
+            types
         }
     }
     `);
@@ -26,18 +27,13 @@ function PokemonsItems() {
             key={response.id} 
             name={response.name}
             img={response.image}
+            id={response.id}
+            type={response.types[0]}
         />
     ))
   }
 
-  
-
 const Home = (props) => {
-
-    useEffect(() => {
-
-      }, []);
-    
 
     return (
         <section className="page-home">
