@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/react-hooks';
 
 import pokeTypes from '../../assets/mocks/pokeTypes';
 import Types from '../../components/Types';
+import Attacks from '../../components/Attacks';
 
 function PokemonById() {
     let { id } = useParams();
@@ -86,11 +87,12 @@ function PokemonById() {
                         <h2>Fast</h2>
                         {poke.attacks.fast.map((attack) => {     
                             return(
-                                <div key={attack.name}>
-                                    <p>{attack.name}</p>
-                                    <p>{attack.type}</p>
-                                    <p>{attack.damage}</p>
-                                </div>
+                                <Attacks 
+                                    key={attack.type} 
+                                    type={attack.type}
+                                    damage={attack.damage}
+                                    name={attack.name}
+                                />
                             )
                         })}    
                     </div>
@@ -98,11 +100,12 @@ function PokemonById() {
                         <h2>Special</h2>
                         {poke.attacks.special.map((attack) => {     
                             return(
-                                <div key={attack.name}>
-                                    <p>{attack.name}</p>
-                                    <p>{attack.type}</p>
-                                    <p>{attack.damage}</p>
-                                </div>
+                                <Attacks 
+                                    key={attack.type} 
+                                    type={attack.type}
+                                    damage={attack.damage}
+                                    name={attack.name}
+                                />
                             )
                         })}    
                     </div>
