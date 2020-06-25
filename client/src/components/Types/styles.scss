@@ -1,0 +1,23 @@
+.poke-details {
+  &__header {
+    &__type {
+      display: flex;
+
+      div {
+        width: 70px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: white;
+        border-radius: 20px;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      div + div {
+        margin-left: 8px;
+      }
+    }
+  }
+}
