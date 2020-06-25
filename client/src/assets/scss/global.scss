@@ -1,3 +1,5 @@
+/*=== GENERAL ===*/
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +18,8 @@ p {
 a {
   text-decoration: none;
 }
+
+/*=== MAIN STRUCTURE ===*/
 
 .page-content {
   width: 100%;
@@ -47,5 +51,37 @@ a {
     to {
       opacity: 1;
     }
+  }
+}
+
+/*=== RIBBON ===*/
+
+@media #{$BREAKPOINT-DESK} {
+  .ribbon {
+    position: fixed;
+    padding: 5px 45px;
+    width: 239px;
+
+    top: 50px;
+    right: -70px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    box-shadow: 0 0 0 3px $BLUE, 0 0 20px -3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);
+
+    background-color: $YELLOW;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+
+    border: 2px dotted $NAVY_BLUE;
+
+    -webkit-backface-visibility: hidden;
+    letter-spacing: 0.5px;
   }
 }
