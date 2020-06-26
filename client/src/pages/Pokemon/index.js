@@ -29,7 +29,9 @@ const Pokemon = () => {
       {loading ? (
         <div className="loading"><div className="loading__pokeball"></div></div>
       ) : (
-          ''
+        <>
+          {console.log(data)}
+        </>
       )}
 
       {error ? <p>template de error</p> : ''}
@@ -98,7 +100,7 @@ const Pokemon = () => {
               </div>
             </div>
             <section
-              className="poke-details__card__attacks-header"
+              className="poke-details__card__sub-header"
               style={{ backgroundColor: `${cardColor}` }}>
               <hgroup>
                 <h2>Ataques e danos</h2>
@@ -132,11 +134,27 @@ const Pokemon = () => {
                 })}
               </div>
             </section>
+            {data.pokemon.evolutions ? (
+              <>
+              <section
+                className="poke-details__card__sub-header"
+                style={{ backgroundColor: `${cardColor}` }}>
+                <hgroup>
+                  <h2>Evoluções</h2>
+                </hgroup>
+              </section>
+              <section className="poke-details__card__evolution">
+
+              </section>
+              </>
+            ) : (
+              ' '
+            )}
           </div>
         </section>
       ) : (
           ''
-        )}
+      )}
     </>
   )
 }
