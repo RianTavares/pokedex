@@ -127,38 +127,46 @@ function PokemonById() {
                       </div>
                       <div>Classificação: {poke.classification}</div>
                     </div>
-                    {/* <div className="poke-details__card__infos__attack-fast"> 
-                        <h2>Fast</h2>
-                        {poke.attacks.fast.map((attack) => {     
-                            return(
-                                <Attacks 
-                                    key={attack.type} 
-                                    type={attack.type}
-                                    damage={attack.damage}
-                                    name={attack.name}
-                                />
-                            )
-                        })}    
-                    </div>
-                    <div className="poke-details__card__infos__attack-special"> 
-                        <h2>Special</h2>
-                        {poke.attacks.special.map((attack) => {     
-                            return(
-                                <Attacks 
-                                    key={attack.type} 
-                                    type={attack.type}
-                                    damage={attack.damage}
-                                    name={attack.name}
-                                />
-                            )
-                        })}    
-                      </div> */}
-                    </div>
-            </div>
-
-        </section>
-    )
-  }
+                </div>
+                <section 
+                  className="poke-details__card__attacks-header"
+                  style={{backgroundColor: `${cardColor}`}}>
+                    <hgroup>
+                      <h2>Ataques e danos</h2>
+                    </hgroup>     
+                </section>
+                <section className="poke-details__card__attacks">
+                  <div className="poke-details__card__attacks__fast"> 
+                      <h2>Fast</h2>
+                      {poke.attacks.fast.map((attack) => {     
+                          return(
+                              <Attacks 
+                                  key={attack.type} 
+                                  type={attack.type}
+                                  damage={attack.damage}
+                                  name={attack.name}
+                              />
+                          )
+                      })}    
+                  </div>
+                  <div className="poke-details__card__attacks__special"> 
+                          <h2>Special</h2>
+                          {poke.attacks.special.map((attack) => {     
+                              return(
+                                  <Attacks 
+                                      key={attack.type} 
+                                      type={attack.type}
+                                      damage={attack.damage}
+                                      name={attack.name}
+                                  />
+                              )
+                          })}    
+                  </div>
+                </section>
+              </div>
+          </section>
+      )
+    }
 
 const Pokemon = () => {
     return (
