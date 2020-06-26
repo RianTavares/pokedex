@@ -7,6 +7,8 @@ import { useQuery } from '@apollo/react-hooks';
 import pokeTypes from '../../assets/mocks/pokeTypes';
 import Types from '../../components/Types';
 import Attacks from '../../components/Attacks';
+import Feature from '../../components/FeaturesTypes';
+
 
 function PokemonById() {
     let { id } = useParams();
@@ -82,7 +84,11 @@ function PokemonById() {
             <div className="poke-details__card">
                 <div className="poke-details__card__infos">
                     <div className="poke-details__card__infos__img-container" >
-                        <div className="poke-details__card__infos__img-container__img" style={{backgroundImage: `url(${poke.image})`}}></div>
+                        <div 
+                          className="poke-details__card__infos__img-container__img" 
+                          style={{backgroundImage: `url(${poke.image})`}}>
+
+                          </div>
                     </div>
                     <div className="poke-details__card__infos__personal">
                       <div className="poke-details__card__infos__personal__data">
@@ -98,8 +104,26 @@ function PokemonById() {
                         </div>
                       </div>
                       <div className="poke-details__card__infos__personal__features">
-                        <div className="poke-details__card__infos__personal__resistant"></div>
-                        <div className="poke-details__card__infos__personal__weaknesses"></div>
+                        <div className="poke-details__card__infos__personal__features__resistant">
+                          <h2>Resistente:</h2>
+                          <div className="feature-list">
+                            {poke.resistant.map((type) => {     
+                                return(
+                                    <Feature key={type} type={type} />
+                                )
+                            })}
+                          </div>
+                        </div>
+                        <div className="poke-details__card__infos__personal__features__weaknesses">
+                          <h2>Fraquezas:</h2>
+                          <div className="feature-list">
+                            {poke.weaknesses.map((type) => {     
+                                return(
+                                  <Feature key={type} type={type} />
+                                )
+                            })}
+                          </div>
+                        </div>
                       </div>
                       <div>Classificação: {poke.classification}</div>
                     </div>

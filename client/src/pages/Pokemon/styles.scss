@@ -41,12 +41,30 @@ color: $ONE_LIGHT_GRAY;
           display: flex;
 
           &__height {
-            width: 35%;
+            width: 50%;
           }
 
           &__weight {
             margin-left: 24px;
-            width: 35%;
+            width: 50%;
+          }
+        }
+
+        &__features {
+          margin: 24px 0 24px 0;
+
+          &__resistant {
+            margin-bottom: 16px;
+
+            h2 {
+              margin-bottom: 8px;
+            }
+          }
+
+          &__weaknesses {
+            h2 {
+              margin-bottom: 8px;
+            }
           }
         }
       }
@@ -89,4 +107,11 @@ color: $ONE_LIGHT_GRAY;
       }
     }
   }
+}
+
+
+.feature-list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
