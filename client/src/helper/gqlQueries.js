@@ -14,7 +14,7 @@ export const POKEMONS = gql`
 
 export const POKEMON_BY_ID = gql`
 query($id: String){
-  pokmon(id: $id) {
+  pokemon(id: $id) {
       number
       name
       weight {
