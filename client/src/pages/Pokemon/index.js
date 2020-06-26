@@ -58,6 +58,7 @@ function PokemonById() {
     if (error) return <p>Error :(</p>;
 
     const poke = data.pokemon;
+    console.log('data>>>', poke)
     const tipo = (poke.types[0]).toLowerCase();
     const cardColor = pokeTypes[`${tipo}`] ? pokeTypes[`${tipo}`] : '#003a70';
 
@@ -68,7 +69,7 @@ function PokemonById() {
                 className="poke-details__header"
                 style={{backgroundColor: `${cardColor}`}}>
                 <hgroup>
-                    <h1>{poke.name}</h1>
+                    <h1>#{poke.number}  {poke.name}</h1>
                 </hgroup>
                 <div className="poke-details__header__type"> 
                     {poke.types.map((type) => {     
@@ -80,10 +81,29 @@ function PokemonById() {
             </header>
             <div className="poke-details__card">
                 <div className="poke-details__card__infos">
-                    <div className="poke-details__card__infos__img" >
-                        <img src={poke.image} alt={`Imagem do ${poke.name}`}/>
+                    <div className="poke-details__card__infos__img-container" >
+                        <div className="poke-details__card__infos__img-container__img" style={{backgroundImage: `url(${poke.image})`}}></div>
                     </div>
-                    <div className="poke-details__card__infos__attack-fast"> 
+                    <div className="poke-details__card__infos__personal">
+                      <div className="poke-details__card__infos__personal__data">
+                        <div className="poke-details__card__infos__personal__data__height">
+                          <h2>Altura</h2>
+                          <p>Mínima: {poke.height.minimum}</p>
+                          <p>Máxima: {poke.height.maximum}</p>
+                        </div>
+                        <div className="poke-details__card__infos__personal__data__weight">
+                          <h2>Peso</h2>
+                          <p>Mínimo: {poke.weight.minimum}</p>
+                          <p>Máximo: {poke.weight.maximum}</p>
+                        </div>
+                      </div>
+                      <div className="poke-details__card__infos__personal__features">
+                        <div className="poke-details__card__infos__personal__resistant"></div>
+                        <div className="poke-details__card__infos__personal__weaknesses"></div>
+                      </div>
+                      <div>Classificação: {poke.classification}</div>
+                    </div>
+                    {/* <div className="poke-details__card__infos__attack-fast"> 
                         <h2>Fast</h2>
                         {poke.attacks.fast.map((attack) => {     
                             return(
@@ -108,10 +128,8 @@ function PokemonById() {
                                 />
                             )
                         })}    
+                      </div> */}
                     </div>
-                </div>
-                <div>Classificação: {poke.classification}</div>
-
             </div>
 
         </section>

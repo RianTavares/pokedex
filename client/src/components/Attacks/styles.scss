@@ -16,7 +16,7 @@
   &__fill-attack {
     height: 20px;
     position: relative;
-    margin: 8px;
+    margin: 2px 8px 8px 0;
     background: #555;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
@@ -26,8 +26,8 @@
     span {
       display: block;
       height: 100%;
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
       background-color: #77c64f;
