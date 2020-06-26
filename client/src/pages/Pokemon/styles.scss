@@ -17,9 +17,13 @@ color: $ONE_LIGHT_GRAY;
 
       h1 {
         text-transform: uppercase;
-        font-size: 25px;
+        font-size: 16px;
         text-align: center;
         color: white;
+
+        @media #{$BREAKPOINT-TABLET} {
+          font-size: 25px;
+        }
       }
     }
   }
@@ -31,11 +35,20 @@ color: $ONE_LIGHT_GRAY;
 
       display: flex;
       justify-content: left;
+      flex-direction: column;
+
+      @media #{$BREAKPOINT-TABLET} {
+        flex-direction: row;
+      }
 
       &__personal {
-        width: 50%;
-        margin-left: 24px;
+        width: 100%;
         position: relative;
+
+        @media #{$BREAKPOINT-TABLET} {
+          width: 50%;
+          margin-left: 24px;
+        }
 
         &__data {
           display: flex;
@@ -70,14 +83,21 @@ color: $ONE_LIGHT_GRAY;
       }
 
       &__img-container {
-        width: 50%;
+        width: 100%;
         height: 350px;
         overflow: hidden;
         border: solid 1px $ONE_LIGHT_GRAY;
         border-radius: 10px;
+        margin-bottom: 24px;
+
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media #{$BREAKPOINT-TABLET} {
+          width: 50%;
+          margin-bottom: 0;
+        }
 
         &__img {
           width: 100%;
@@ -127,4 +147,5 @@ color: $ONE_LIGHT_GRAY;
   display: flex;
   justify-content: left;
   align-items: center;
+  flex-wrap: wrap;
 }

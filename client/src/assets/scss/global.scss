@@ -36,11 +36,12 @@ a {
     background: white;
     min-height: 450px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     margin: 60px auto 100px auto;
 
-    @media #{$BREAKPOINT-DESK} {
+    @media #{$BREAKPOINT-TABLET} {
       min-height: 400px;
+      padding: 20px;
     }
   }
 }
