@@ -30,7 +30,7 @@ const Pokemon = () => {
         <div className="loading"><div className="loading__pokeball"></div></div>
       ) : (
           ''
-        )}
+      )}
 
       {error ? <p>template de error</p> : ''}
 
