@@ -5,13 +5,19 @@ import pokeTypes from '../../assets/mocks/pokeTypes';
 
 const Types = (props) => {
 
-    const tipo = (props.type).toLowerCase();
-    const cardColor = pokeTypes[`${tipo}`] ? pokeTypes[`${tipo}`] : '#003a70';
+    const type = props.type ? (props.type).toLowerCase() : null;
+    const cardColor = pokeTypes[`${type}`] ? pokeTypes[`${type}`] : '#003a70';
 
     return(
-        <div key={props.type} style={{backgroundColor: `${cardColor}`}}>
+      <>
+        {type ? (
+          <div key={props.type} style={{backgroundColor: `${cardColor}`}}>
             {props.type}
-        </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </>
     )
 } 
 

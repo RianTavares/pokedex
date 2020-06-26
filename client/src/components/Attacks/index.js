@@ -3,18 +3,25 @@ import pokeTypes from '../../assets/mocks/pokeTypes';
 
 const Attacks = (props) => {
 
-    const tipo = (props.type).toLowerCase();
-    const cardColor = pokeTypes[`${tipo}`] ? pokeTypes[`${tipo}`] : '#003a70';
+    const type = props.type ? (props.type).toLowerCase() : null;
+    const cardColor = pokeTypes[`${type}`] ? pokeTypes[`${type}`] : '#003a70';
+    const name = props.name;
     const damage = `${props.damage}%`
-
+    
     return (
-        <div className="attack-item">
+      <>
+        {name && damage && type ? (
+          <div className="attack-item">
             <p className="attack-item__name">{props.name}</p>
             <p className="attack-item__damage">{props.damage}</p>
             <div className="attack-item__fill-attack">
                 <span style={{width: `${damage}`, backgroundColor: `${cardColor}`}}></span>
             </div>
-        </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </>
     )
 }
 
