@@ -1,9 +1,8 @@
-import React from "react";
+import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Body from "./Layout"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from './pages/Home';
-import Pokemon from './pages/Pokemon';
-
+import Home from "./pages/Home"
+import Pokemon from "./pages/Pokemon"
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
         </Body>
       </>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

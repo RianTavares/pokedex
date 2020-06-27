@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import Pokemon from '../../components/Pokemon';
+import React, { useEffect, useState } from "react"
+import { useQuery } from "@apollo/react-hooks"
+import Pokemon from "../../components/Pokemon"
 
-import { POKEMONS } from '../../helper/gqlQueries'
-import { useQuery } from '@apollo/react-hooks';
+import { POKEMONS } from "../../helper/gqlQueries"
 
 const Home = () => {
-  const [filteredData, setFilteredData] = useState([]);
-  const [pokemons, setPokemons] = useState([]);
+  const [filteredData, setFilteredData] = useState([])
+  const [pokemons, setPokemons] = useState([])
 
-  const { loading, error, data } = useQuery(POKEMONS, {
-  });
+  const { loading, error, data } = useQuery(POKEMONS, {})
 
   const findPokemon = (e) => {
-    e.preventDefault();
-    const inputString = e.target.value;
+    e.preventDefault()
+    const inputString = e.target.value
 
     setFilteredData(
-      pokemons.filter(item => {
+      pokemons.filter((item) => {
         return item.name.toLowerCase().includes(inputString)
       })
     )
@@ -24,34 +23,34 @@ const Home = () => {
 
   useEffect(() => {
     if (data) {
-      setPokemons(data.pokemons);
-      setFilteredData(data.pokemons);
+      setPokemons(data.pokemons)
+      setFilteredData(data.pokemons)
     }
   }, [data])
 
   return (
     <>
       {loading ? (
-        <div className="loading"><div className="loading__pokeball"></div></div>
+        <div className="loading">
+          <div className="loading__pokeball" />
+        </div>
       ) : (
-          ''
-        )}
+        ""
+      )}
 
-      {error ? <p>template de error</p> : ''}
+      {error ? <p>template de error</p> : ""}
 
       {data ? (
         <section className="page-home">
           <form className="page-home__form" action="">
-            <input 
-              type="text" 
-              placeholder="Procure pelo nome do seu Pokemon..." 
-              name="search" 
-              onChange={findPokemon} 
+            <input
+              type="text"
+              placeholder="Procure pelo nome do seu Pokemon..."
+              name="search"
+              onChange={findPokemon}
             />
           </form>
           <section>
-
-
             <div className="poke-list">
               {filteredData ? (
                 <>
@@ -67,16 +66,16 @@ const Home = () => {
                   ))}
                 </>
               ) : (
-                  ' '
-                )}
+                " "
+              )}
             </div>
           </section>
         </section>
       ) : (
-          ''
-        )}
+        ""
+      )}
     </>
   )
 }
 
-export default Home; 
+export default Home

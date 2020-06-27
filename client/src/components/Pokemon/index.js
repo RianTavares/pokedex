@@ -1,27 +1,60 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaEye } from 'react-icons/fa';
-import pokeTypes from '../../assets/mocks/pokeTypes';
+import React from "react"
+import { Link } from "react-router-dom"
+import { FaEye } from "react-icons/fa"
+import PropTypes from "prop-types"
+import pokeTypes from "../../assets/mocks/pokeTypes"
 
 const Pokemon = (props) => {
+  const { id } = props
+  const { type } = props
+  const { name } = props
+  const { number } = props
+  const { img } = props
 
-    const pokemonId = props.id;
-    const tipo = (props.type).toLowerCase();
-    const cardColor = pokeTypes[`${tipo}`] ? pokeTypes[`${tipo}`] : '#003a70';
+  const cardColor = pokeTypes[`${type.toLowerCase()}`]
+    ? pokeTypes[`${type.toLowerCase()}`]
+    : "#003a70"
 
-    return(
-        <div className="poke-list__item" style={{borderColor: `${cardColor}`}}>
-            <div className="poke-list__item__img-container">
-                <img className="poke-list__item__img-container__img" src={props.img} alt={`imagem do ${props.name}`}/>
-            </div>
-            <Link className="poke-list__item__button" to={pokemonId}>
-                <div className="poke-list__item__button__info" style={{backgroundColor: `${cardColor}`}}>
-                    <p className="poke-list__item__button__info__name">#{props.number} {props.name}</p>
-                    <div><FaEye /></div>
-                </div>
-            </Link>
+  return (
+    <div className="poke-list__item" style={{ borderColor: `${cardColor}` }}>
+      <div className="poke-list__item__img-container">
+        <img
+          className="poke-list__item__img-container__img"
+          src={img}
+          alt={`imagem do ${name}`}
+        />
+      </div>
+      <Link className="poke-list__item__button" to={id}>
+        <div
+          className="poke-list__item__button__info"
+          style={{ backgroundColor: `${cardColor}` }}
+        >
+          <p className="poke-list__item__button__info__name">
+            #{number} {name}
+          </p>
+          <div>
+            <FaEye />
+          </div>
         </div>
-    )
+      </Link>
+    </div>
+  )
 }
 
-export default Pokemon;
+Pokemon.defaultProps = {
+  id: "/",
+  type: "grass",
+  name: "",
+  number: "",
+  img: "",
+}
+
+Pokemon.propTypes = {
+  id: PropTypes.node,
+  type: PropTypes.node,
+  name: PropTypes.node,
+  number: PropTypes.node,
+  img: PropTypes.node,
+}
+
+export default Pokemon

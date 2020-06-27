@@ -1,25 +1,35 @@
-import React from 'react';
-
-import pokeTypes from '../../assets/mocks/pokeTypes';
-
+import React from "react"
+import PropTypes from "prop-types"
+import pokeTypes from "../../assets/mocks/pokeTypes"
 
 const Types = (props) => {
+  const { type } = props
 
-    const type = props.type ? (props.type).toLowerCase() : null;
-    const cardColor = pokeTypes[`${type}`] ? pokeTypes[`${type}`] : '#003a70';
+  const pokemonType = type ? type.toLowerCase() : null
 
-    return(
-      <>
-        {type ? (
-          <div key={props.type} style={{backgroundColor: `${cardColor}`}}>
-            {props.type}
-          </div>
-        ) : (
-          ""
-        )}
-      </>
-    )
-} 
+  const cardColor = pokeTypes[`${pokemonType}`]
+    ? pokeTypes[`${pokemonType}`]
+    : "#003a70"
 
-export default Types;
+  return (
+    <>
+      {pokemonType ? (
+        <div key={type} style={{ backgroundColor: `${cardColor}` }}>
+          {type}
+        </div>
+      ) : (
+        ""
+      )}
+    </>
+  )
+}
 
+Types.defaultProps = {
+  type: "grass",
+}
+
+Types.propTypes = {
+  type: PropTypes.node,
+}
+
+export default Types

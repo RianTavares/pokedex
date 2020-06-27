@@ -1,20 +1,20 @@
-import { gql } from "apollo-boost";
-
+import { gql } from "apollo-boost"
 
 export const POKEMONS = gql`
-{
-  pokemons(first: 151){
+  {
+    pokemons(first: 151) {
       id
       number
       name
       image
       types
+    }
   }
-}`;
+`
 
 export const POKEMON_BY_ID = gql`
-query($id: String){
-  pokemon(id: $id) {
+  query($id: String) {
+    pokemon(id: $id) {
       number
       name
       weight {
@@ -54,4 +54,4 @@ query($id: String){
       image
     }
   }
-`;
+`
