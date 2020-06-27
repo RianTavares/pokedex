@@ -12,7 +12,7 @@ const Home = () => {
 
   const findPokemon = (e) => {
     e.preventDefault()
-    const inputString = e.target.value
+    const inputString = e.target.value.toLowerCase()
 
     setFilteredData(
       pokemons.filter((item) => {
