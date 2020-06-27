@@ -9,32 +9,9 @@
     font-size: 17px;
     border: 1px solid grey;
     float: left;
-    width: 80%;
+    width: 100%;
     background: #f1f1f1;
     margin-bottom: 30px;
-
-    @media #{$BREAKPOINT-DESK} {
-      width: 90%;
-    }
-  }
-
-  &__form button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: $BLUE;
-    color: white;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-
-    @media #{$BREAKPOINT-DESK} {
-      width: 10%;
-    }
-  }
-
-  &__form button:hover {
-    background: $NAVY_BLUE;
   }
 
   &__form::after {
