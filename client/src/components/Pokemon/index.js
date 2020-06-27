@@ -16,7 +16,7 @@ const Pokemon = (props) => {
             </div>
             <Link className="poke-list__item__button" to={pokemonId}>
                 <div className="poke-list__item__button__info" style={{backgroundColor: `${cardColor}`}}>
-                    <p className="poke-list__item__button__info__name">{props.name}</p>
+                    <p className="poke-list__item__button__info__name">#{props.number} {props.name}</p>
                     <div><FaEye /></div>
                 </div>
             </Link>

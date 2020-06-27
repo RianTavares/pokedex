@@ -139,6 +139,15 @@ color: $ONE_LIGHT_GRAY;
         margin-left: 24px;
       }
     }
+
+    &__evolution {
+      display: grid;
+      grid-gap: 16px;
+
+      @media #{$BREAKPOINT-TABLET}{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
   }
 }
 

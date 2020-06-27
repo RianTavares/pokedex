@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { FaSearchengin } from 'react-icons/fa';
 import Pokemon from '../../components/Pokemon';
 
 import { POKEMONS } from '../../helper/gqlQueries'
@@ -63,6 +62,7 @@ const Home = () => {
                       img={response.image}
                       id={response.id}
                       type={response.types[0]}
+                      number={response.number}
                     />
                   ))}
                 </>

@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useQuery } from '@apollo/react-hooks';
-import { POKEMON_BY_ID } from '../../helper/gqlQueries'
+import { POKEMON_BY_ID } from '../../helper/gqlQueries';
 
 import pokeTypes from '../../assets/mocks/pokeTypes';
 import Types from '../../components/Types';
 import Attacks from '../../components/Attacks';
 import Feature from '../../components/FeaturesTypes';
+import Evolution from '../../components/Evolutions';
 
 
 const Pokemon = () => {
+  window.scrollTo(0,0);
+  
   const [cardColor, setCardColor] = useState('#003a70');
 
   let { id } = useParams();
@@ -22,6 +25,7 @@ const Pokemon = () => {
 
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : '#003a70')
+    
   }, [type])
 
   return (
@@ -29,10 +33,8 @@ const Pokemon = () => {
       {loading ? (
         <div className="loading"><div className="loading__pokeball"></div></div>
       ) : (
-        <>
-          {console.log(data)}
-        </>
-      )}
+          ' '
+        )}
 
       {error ? <p>template de error</p> : ''}
 
@@ -136,25 +138,32 @@ const Pokemon = () => {
             </section>
             {data.pokemon.evolutions ? (
               <>
-              <section
-                className="poke-details__card__sub-header"
-                style={{ backgroundColor: `${cardColor}` }}>
-                <hgroup>
-                  <h2>Evoluções</h2>
-                </hgroup>
-              </section>
-              <section className="poke-details__card__evolution">
-
-              </section>
+                <section
+                  className="poke-details__card__sub-header"
+                  style={{ backgroundColor: `${cardColor}` }}>
+                  <hgroup>
+                    <h2>Evoluções</h2>
+                  </hgroup>
+                </section>
+                <section className="poke-details__card__evolution">
+                  {data.pokemon?.evolutions?.map((poke) => {
+                    return (
+                      <Evolution
+                        key={poke.id}
+                        id={poke.id}
+                      />
+                    )
+                  })}
+                </section>
               </>
             ) : (
-              ' '
-            )}
+                ' '
+              )}
           </div>
         </section>
       ) : (
           ''
-      )}
+        )}
     </>
   )
 }
