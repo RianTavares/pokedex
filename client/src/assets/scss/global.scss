@@ -38,10 +38,39 @@ a {
     border-radius: 10px;
     padding: 10px;
     margin: 60px auto 100px auto;
+    position: relative;
 
     @media #{$BREAKPOINT-TABLET} {
       min-height: 400px;
       padding: 20px;
+    }
+  
+    &__back-home {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: -35px;
+      right: 25px;
+      z-index: 2;
+
+      text-transform: uppercase;
+      background: transparent;
+      border: none;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+
+      p {
+        display: none;
+
+        @media #{$BREAKPOINT-TABLET} {
+          display: block;
+        }
+      }
+
+      svg {
+        margin-right: 8px;
+      }
     }
   }
 }
