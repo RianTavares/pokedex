@@ -32,22 +32,22 @@ const Pokemon = () => {
 
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
-  }, [type])
+    console.log("errorrrrrrrrrr", error)
+  }, [type, error])
 
   return (
     <>
-      {loading ? (
+      {loading && (
         <div className="loading">
           <div className="loading__pokeball" />
         </div>
-      ) : (
-        " "
       )}
 
-      {error ? <p>template de error</p> : ""}
+      {error && <p>template de error</p>}
 
-      {data ? (
+      {data?.pokemon ? (
         <>
+          {console.log("bruxao>>>", data)}
           <button
             type="button"
             className="page-content__card__back-home"
@@ -176,7 +176,7 @@ const Pokemon = () => {
           </section>
         </>
       ) : (
-        ""
+        "aqui buraaaaao"
       )}
     </>
   )
