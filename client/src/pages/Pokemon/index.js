@@ -180,14 +180,6 @@ const Pokemon = () => {
           </section>
         </>
       )}
-
-      {typeof error === "undefined" && (
-        <Error
-          img={Pikachu404}
-          message={`Ops! O Pokemon com o ID - "${id}" que você procura, não existe.`}
-          backHome
-        />
-      )}
     </>
   )
 }
