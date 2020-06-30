@@ -1,7 +1,8 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import { FaEye } from "react-icons/fa"
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
+
+import { FaEye } from "react-icons/fa"
 import pokeTypes from "../../assets/mocks/pokeTypes"
 
 const Pokemon = (props) => {

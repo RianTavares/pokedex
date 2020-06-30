@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Body from "./Layout"
 import Home from "./pages/Home"
 import Pokemon from "./pages/Pokemon"
-import Form from "./pages/Form"
 import Page404 from "./pages/Page404"
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/:id" component={Pokemon} />
-            <Route exact path="/form/:id" component={Form} />
             <Route exact path="*" component={Page404} />
           </Switch>
         </Body>

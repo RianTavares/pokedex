@@ -1,0 +1,47 @@
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    min-height: 300px;
+  
+    &__message {
+      color: #393d48;
+      font-weight: bold;
+      margin-bottom: 50px;
+  }
+  &__img{
+    width: 80%;
+
+    @media #{$BREAKPOINT-TABLET} {
+      width: 30%;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    
+    position: absolute;
+    bottom: -30px;
+    
+    background-color: $BLUE;
+    color: white;
+    cursor: pointer;
+
+    p {
+      margin-left: 8px;
+    }
+  }
+
+  &__button:hover {
+    background-color: $NAVY_BLUE;
+  }
+}

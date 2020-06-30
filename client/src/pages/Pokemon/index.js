@@ -10,6 +10,8 @@ import Types from "../../components/Types"
 import Attacks from "../../components/Attacks"
 import Feature from "../../components/FeaturesTypes"
 import Evolution from "../../components/Evolutions"
+import Error from "../../components/Error"
+import Pikachu404 from "../../assets/imgs/pikachu-404.png"
 
 const Pokemon = () => {
   window.scrollTo(0, 0)
@@ -32,7 +34,6 @@ const Pokemon = () => {
 
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
-    console.log("errorrrrrrrrrr", error)
   }, [type, error])
 
   return (
@@ -43,11 +44,16 @@ const Pokemon = () => {
         </div>
       )}
 
-      {error && <p>template de error</p>}
+      {error && (
+        <Error
+          img={Pikachu404}
+          message="500 - Internal Server Error"
+          backHome
+        />
+      )}
 
-      {data?.pokemon ? (
+      {data?.pokemon && (
         <>
-          {console.log("bruxao>>>", data)}
           <button
             type="button"
             className="page-content__card__back-home"
@@ -153,7 +159,7 @@ const Pokemon = () => {
                   })}
                 </div>
               </section>
-              {data.pokemon.evolutions ? (
+              {data?.pokemon?.evolutions && (
                 <>
                   <section
                     className="poke-details__card__sub-header"
@@ -169,14 +175,18 @@ const Pokemon = () => {
                     })}
                   </section>
                 </>
-              ) : (
-                " "
               )}
             </div>
           </section>
         </>
-      ) : (
-        "aqui buraaaaao"
+      )}
+
+      {typeof error === "undefined" && (
+        <Error
+          img={Pikachu404}
+          message={`Ops! O Pokemon com o ID - "${id}" que você procura, não existe.`}
+          backHome
+        />
       )}
     </>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 
-import WhoisPokemon from "../../assets/imgs/whoispokemon.jpg"
+import WhoisPokemon from "../../assets/imgs/pikachu-404.png"
 import Error from "../../components/Error"
 
 const Page404 = () => {
