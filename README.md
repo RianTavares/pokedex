@@ -24,7 +24,7 @@
 
 ## What does it do
 
-This project is a kind of study and a front-end challenge. Its main function is to capture information from a GraphQL API (https://graphql-pokemon.now.sh/) that returns all classic Pokémon and their information and, using React, organize the data on the screen, providing the user with the experience to find all the information of the desired pokemon.
+This project is a kind of study and a front-end challenge. Its main function is to capture information from a GraphQL API (https://graphql-pokemon.now.sh/) that returns all classic Pokémon and their information and, using React, organize the data on the screen providing the user with the experience to find all the information of the desired pokemon.
 
 ## Features
 
@@ -32,6 +32,7 @@ This project is a kind of study and a front-end challenge. Its main function is 
 - [✓] List all pokemons showing their names pokedex numbers and their main type color
 - [✓] User friendly
 - [✓] Organizable and readable code (using ESlint)
+- [✓] Error component to handler 404 pages, Server error and ID not found
 
 ## Fast setup (CLI Version)
 
@@ -45,7 +46,7 @@ This project is a kind of study and a front-end challenge. Its main function is 
 :warning: :point_down:
 
 - if you enjoyed about this project add a star :star: 
-- Don't forget to follow me on Instagram [@riantba](https://www.instagram.com/riantavareson/) :heart:
+- Don't forget to follow me on Instagram [@riantavareson](https://www.instagram.com/riantavareson/) :heart:
 - And follow me also here on [github](https://github.com/RianTavares) :)
 - Don't go away without contribute, PRs are welcome!
 
