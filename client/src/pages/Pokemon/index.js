@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 
 import { useQuery } from "@apollo/react-hooks"
+import { FaArrowLeft, FaEdit } from "react-icons/fa"
 import { POKEMON_BY_ID } from "../../helper/gqlQueries"
-import { gql } from "apollo-boost"
-import { cache } from "../../services/apollo/apollo-connect"
-
-import { FaArrowLeft } from "react-icons/fa"
-import { FaEdit } from "react-icons/fa"
 
 import pokeTypes from "../../assets/mocks/pokeTypes"
 import Types from "../../components/Types"
@@ -38,13 +34,8 @@ const Pokemon = () => {
     history.push(`/form/${id}`)
   }
 
-
-
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
-    if(data) {
-    console.log('cache>>>>', cache)
-   }
   }, [type, data])
 
   return (
@@ -83,8 +74,12 @@ const Pokemon = () => {
                   return <Types key={pokemonType} type={pokemonType} />
                 })}
               </div>
-              <button className="poke-details__header__button" type="button" onClick={handlerEdit}>
-                <FaEdit size={"25"}/>
+              <button
+                className="poke-details__header__button"
+                type="button"
+                onClick={handlerEdit}
+              >
+                <FaEdit size="25" />
               </button>
             </header>
             <div className="poke-details__card">
@@ -96,9 +91,9 @@ const Pokemon = () => {
                   />
                 </div>
                 <div className="poke-details__header__type mobi">
-                    {data.pokemon.types.map((pokemonType) => {
-                      return <Types key={pokemonType} type={pokemonType} />
-                    })}
+                  {data.pokemon.types.map((pokemonType) => {
+                    return <Types key={pokemonType} type={pokemonType} />
+                  })}
                 </div>
                 <div className="poke-details__card__infos__personal">
                   <div className="poke-details__card__infos__personal__data">

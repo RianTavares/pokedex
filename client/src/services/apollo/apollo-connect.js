@@ -1,19 +1,19 @@
-import ApolloClient, { InMemoryCache } from "apollo-boost";
-import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
-import introspectionQueryResultData from './fragmentTypes.ts';
+import ApolloClient, { InMemoryCache } from "apollo-boost"
+import { IntrospectionFragmentMatcher } from "apollo-cache-inmemory"
+import introspectionQueryResultData from "./fragmentTypes.ts"
 
-const url = "https://graphql-pokemon.now.sh/";
+const url = "https://graphql-pokemon.now.sh/"
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
-  introspectionQueryResultData
+  introspectionQueryResultData,
 })
 
 export const cache = new InMemoryCache({
-  dataIdFromObject: object => object.id || null,
-  fragmentMatcher
+  dataIdFromObject: (object) => object.id || null,
+  fragmentMatcher,
 })
 
 export const client = new ApolloClient({
-  cache: cache,
-  uri: url
-});
+  cache,
+  uri: url,
+})

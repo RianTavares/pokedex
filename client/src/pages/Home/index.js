@@ -12,7 +12,7 @@ const Home = () => {
   const [buttonText, setButtonText] = useState("Carregar mais")
 
   const { loading, error, data } = useQuery(POKEMONS, {
-    variables: { first: first || first !== null }
+    variables: { first: first || first !== null },
   })
 
   const findPokemon = (e) => {
@@ -27,18 +27,16 @@ const Home = () => {
   }
 
   const handlerPagination = () => {
-
     // if(first >= 151)
 
-    setFirst(first+20)
+    setFirst(first + 20)
   }
 
   useEffect(() => {
-    
-    if(data && loading) {
+    if (data && loading) {
       const buttonMore = document.getElementById("button-more")
       buttonMore.classList.add("loading-ring")
-      buttonMore.disabled = true;
+      buttonMore.disabled = true
     }
 
     if (data && !loading) {
@@ -46,19 +44,18 @@ const Home = () => {
 
       const buttonMore = document.getElementById("button-more")
       buttonMore.classList.remove("loading-ring")
-      buttonMore.disabled = false;
+      buttonMore.disabled = false
 
       setPokemons(data.pokemons)
       setFilteredData(data.pokemons)
-      console.log('aqui>>> ',data)
-      
-      if(dataLength === data.pokemons.length) {
+
+      if (dataLength === data.pokemons.length) {
         buttonMore.classList.add("no-poke")
         setButtonText("Ops! acabaram os pokemos :(")
-        buttonMore.disabled = true;
+        buttonMore.disabled = true
       }
     }
-  }, [data, loading])
+  }, [data, dataLength, loading])
 
   return (
     <>
@@ -72,37 +69,46 @@ const Home = () => {
 
       {data && (
         <>
-        <section className="page-home">
-          <form className="page-home__form">
-            <input
-              type="text"
-              placeholder="Procure pelo nome do seu Pokemon..."
-              name="search"
-              onChange={findPokemon}
-            />
-          </form>
-          <section>
-            <div className="poke-list">
-              {filteredData && (
-                <>
-                  {filteredData.map((response) => (
-                    <Pokemon
-                      key={response.id}
-                      name={response.name}
-                      img={response.image}
-                      id={response.id}
-                      type={response.types[0]}
-                      number={response.number}
-                    />
-                  ))}
-                </>
-              )}
-            </div>
+          <section className="page-home">
+            <form className="page-home__form">
+              <input
+                type="text"
+                placeholder="Procure pelo nome do seu Pokemon..."
+                name="search"
+                onChange={findPokemon}
+              />
+            </form>
+            <section>
+              <div className="poke-list">
+                {filteredData && (
+                  <>
+                    {filteredData.map((response) => (
+                      <Pokemon
+                        key={response.id}
+                        name={response.name}
+                        img={response.image}
+                        id={response.id}
+                        type={response.types[0]}
+                        number={response.number}
+                      />
+                    ))}
+                  </>
+                )}
+              </div>
+            </section>
           </section>
-        </section>
-        <button className="page-home__button" id="button-more" onClick={handlerPagination}>
-          {buttonText}<div></div><div></div><div></div><div></div>        
-        </button>
+          <button
+            type="button"
+            className="page-home__button"
+            id="button-more"
+            onClick={handlerPagination}
+          >
+            {buttonText}
+            <div />
+            <div />
+            <div />
+            <div />
+          </button>
         </>
       )}
     </>

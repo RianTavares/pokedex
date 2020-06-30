@@ -1,7 +1,7 @@
 import { gql } from "apollo-boost"
 
 export const POKEMONS = gql`
-query($first: Int!) {
+  query($first: Int!) {
     pokemons(first: $first) {
       id
       number
