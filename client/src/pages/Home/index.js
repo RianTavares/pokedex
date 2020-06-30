@@ -7,8 +7,13 @@ import { POKEMONS } from "../../helper/gqlQueries"
 const Home = () => {
   const [filteredData, setFilteredData] = useState([])
   const [pokemons, setPokemons] = useState([])
+  const [first, setFirst] = useState(20)
+  const [dataLength, setDataLength] = useState(0)
+  const [buttonText, setButtonText] = useState("Carregar mais")
 
-  const { loading, error, data } = useQuery(POKEMONS, {})
+  const { loading, error, data } = useQuery(POKEMONS, {
+    variables: { first: first || first !== null }
+  })
 
   const findPokemon = (e) => {
     e.preventDefault()
@@ -21,28 +26,54 @@ const Home = () => {
     )
   }
 
+  const handlerPagination = () => {
+
+    // if(first >= 151)
+
+    setFirst(first+20)
+  }
+
   useEffect(() => {
-    if (data) {
+    
+    if(data && loading) {
+      const buttonMore = document.getElementById("button-more")
+      buttonMore.classList.add("loading-ring")
+      buttonMore.disabled = true;
+    }
+
+    if (data && !loading) {
+      setDataLength(data.pokemons.length)
+
+      const buttonMore = document.getElementById("button-more")
+      buttonMore.classList.remove("loading-ring")
+      buttonMore.disabled = false;
+
       setPokemons(data.pokemons)
       setFilteredData(data.pokemons)
+      console.log('aqui>>> ',data)
+      
+      if(dataLength === data.pokemons.length) {
+        buttonMore.classList.add("no-poke")
+        setButtonText("Ops! acabaram os pokemos :(")
+        buttonMore.disabled = true;
+      }
     }
-  }, [data])
+  }, [data, loading])
 
   return (
     <>
-      {loading ? (
+      {loading && (
         <div className="loading">
           <div className="loading__pokeball" />
         </div>
-      ) : (
-        ""
       )}
 
       {error ? <p>template de error</p> : ""}
 
-      {data ? (
+      {data && (
+        <>
         <section className="page-home">
-          <form className="page-home__form" action="">
+          <form className="page-home__form">
             <input
               type="text"
               placeholder="Procure pelo nome do seu Pokemon..."
@@ -52,7 +83,7 @@ const Home = () => {
           </form>
           <section>
             <div className="poke-list">
-              {filteredData ? (
+              {filteredData && (
                 <>
                   {filteredData.map((response) => (
                     <Pokemon
@@ -65,14 +96,14 @@ const Home = () => {
                     />
                   ))}
                 </>
-              ) : (
-                " "
               )}
             </div>
           </section>
         </section>
-      ) : (
-        ""
+        <button className="page-home__button" id="button-more" onClick={handlerPagination}>
+          {buttonText}<div></div><div></div><div></div><div></div>        
+        </button>
+        </>
       )}
     </>
   )
