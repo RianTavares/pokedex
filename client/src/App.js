@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Body from "./Layout"
 import Home from "./pages/Home"
 import Pokemon from "./pages/Pokemon"
+import Form from "./pages/Form"
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Body>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/:id" component={Pokemon} />
+            <Route exact path="/:id" component={Pokemon} />
+            <Route exact path="/form/:id" component={Form} />
           </Switch>
         </Body>
       </>
