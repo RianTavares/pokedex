@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 
 import { useQuery } from "@apollo/react-hooks"
-import { FaArrowLeft } from "react-icons/fa"
 import { POKEMON_BY_ID } from "../../helper/gqlQueries"
 import { gql } from "apollo-boost"
 import { cache } from "../../services/apollo/apollo-connect"
+
+import { FaArrowLeft } from "react-icons/fa"
+import { FaEdit } from "react-icons/fa"
 
 import pokeTypes from "../../assets/mocks/pokeTypes"
 import Types from "../../components/Types"
@@ -41,110 +43,7 @@ const Pokemon = () => {
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
     if(data) {
-    // const newPoke = {
-    //   id: "UG9rZW1vbjowMDE=",
-    //   __typename: "Pokemon",
-    //   "number": "001",
-    //   "name": "Bulbasaur viadao",
-    //   "weight": {
-    //     "minimum": "6.04kg",
-    //     "maximum": "7.76kg"
-    //   },
-    //   "height": {
-    //     "minimum": "0.61m",
-    //     "maximum": "0.79m"
-    //   },
-    //   "classification": "Seed Pokémon",
-    //   "types": [
-    //     "Grass",
-    //     "Poison"
-    //   ],
-    //   "resistant": [
-    //     "Water",
-    //     "Electric",
-    //     "Grass",
-    //     "Fighting",
-    //     "Fairy"
-    //   ],
-    //   "attacks": {
-    //     "fast": [
-    //       {
-    //         "name": "Tackle",
-    //         "type": "Normal",
-    //         "damage": 12
-    //       },
-    //       {
-    //         "name": "Vine Whip",
-    //         "type": "Grass",
-    //         "damage": 7
-    //       }
-    //     ],
-    //     "special": [
-    //       {
-    //         "name": "Power Whip",
-    //         "type": "Grass",
-    //         "damage": 70
-    //       },
-    //       {
-    //         "name": "Seed Bomb",
-    //         "type": "Grass",
-    //         "damage": 40
-    //       },
-    //       {
-    //         "name": "Sludge Bomb",
-    //         "type": "Poison",
-    //         "damage": 55
-    //       }
-    //     ]
-    //   },
-    //   "weaknesses": [
-    //     "Fire",
-    //     "Ice",
-    //     "Flying",
-    //     "Psychic"
-    //   ],
-    //   "fleeRate": 0.1,
-    //   "maxCP": 951,
-    //   "evolutions": [
-    //     {
-    //       "id": "UG9rZW1vbjowMDI="
-    //     },
-    //     {
-    //       "id": "UG9rZW1vbjowMDM="
-    //     }
-    //   ],
-    //   "evolutionRequirements": {
-    //     "amount": 25,
-    //     "name": "Bulbasaur candies"
-    //   },
-    //   "maxHP": 1071,
-    //   "image": "https://img.pokemondb.net/artwork/bulbasaur.jpg"
-    // }
-
-    // cache.writeFragment({
-    //   id: 'UG9rZW1vbjowMDE=',
-    //   fragment: gql`
-    //   fragment name on Pokemon{
-    //     __typename
-    //       name
-    //     }
-  
-    //   `,
-    //   data: {
-    //     name: "zé",
-    //     __typename: "Pokemon"
-    //   },
-    // });
-    // const bla = cache.readQuery({
-    //   query: POKEMON_BY_ID,
-    //   variables: {
-    //     id: "UG9rZW1vbjowMDE=",
-    //   },
-    // });
-
- 
     console.log('cache>>>>', cache)
-    // console.log('blaaaa>>>', bla);
    }
   }, [type, data])
 
@@ -179,13 +78,13 @@ const Pokemon = () => {
                   #{data.pokemon.number} {data.pokemon.name}
                 </h1>
               </hgroup>
-              <div className="poke-details__header__type">
+              <div className="poke-details__header__type desk">
                 {data.pokemon.types.map((pokemonType) => {
                   return <Types key={pokemonType} type={pokemonType} />
                 })}
               </div>
-              <button type="button" onClick={handlerEdit}>
-                editar
+              <button className="poke-details__header__button" type="button" onClick={handlerEdit}>
+                <FaEdit size={"25"}/>
               </button>
             </header>
             <div className="poke-details__card">
@@ -195,6 +94,11 @@ const Pokemon = () => {
                     className="poke-details__card__infos__img-container__img"
                     style={{ backgroundImage: `url(${data.pokemon.image})` }}
                   />
+                </div>
+                <div className="poke-details__header__type mobi">
+                    {data.pokemon.types.map((pokemonType) => {
+                      return <Types key={pokemonType} type={pokemonType} />
+                    })}
                 </div>
                 <div className="poke-details__card__infos__personal">
                   <div className="poke-details__card__infos__personal__data">

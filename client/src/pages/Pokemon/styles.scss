@@ -26,6 +26,21 @@ color: $ONE_LIGHT_GRAY;
         }
       }
     }
+
+    &__button {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+
+      color: $ONE_LIGHT_GRAY;
+      background: transparent;
+      border: 0;
+
+      @media #{$BREAKPOINT-TABLET} {
+        right: 40px;
+        top: 29px;
+      }
+    }
   }
 
   &__card {
@@ -157,4 +172,20 @@ color: $ONE_LIGHT_GRAY;
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.mobi {
+  visibility: visible;
+
+  @media #{$BREAKPOINT-TABLET} {
+    visibility: hidden;
+  }
+}
+
+.desk {
+  visibility: hidden;
+
+  @media #{$BREAKPOINT-TABLET} {
+    visibility: visible;
+  }
 }
