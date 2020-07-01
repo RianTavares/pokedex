@@ -39,8 +39,8 @@ const Pokemon = () => {
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
 
-    if(data) {
-      if(!data.pokemon) {
+    if (data) {
+      if (!data.pokemon) {
         history.push("/page/not-found")
       }
     }
