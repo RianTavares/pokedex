@@ -36,7 +36,7 @@ This project is a kind of study and a front-end challenge. Its main function is 
 - [✓] Organizable and readable code (using ESlint)
 - [✓] Error component to handler 404 pages and Server error
 - [✓] Sort of pagination using a button to request more data from API
-- [✓] [App up and running on Heroku](https://pokedexbyrian.herokuapp.com/)
+- [✓] App up and running on Heroku (https://pokedexbyrian.herokuapp.com/)
 
 
 
