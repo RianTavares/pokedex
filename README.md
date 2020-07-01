@@ -54,13 +54,13 @@ This project is a kind of study and a front-end challenge. Its main function is 
 - Apollo Client 
 - SASS
 - Consumes from a GraphQL API (https://graphql-pokemon.now.sh/)
-- Up
+
 
 
 ## Needing improvement  // To do
 - Apollo client cache:
   - cache fragments
-  - The Pokémon details page is not being read in the updated cache
+  - The Pokémon details page is reading data from the updated cache
 - Write an issue if you find anything to improve or contribute making a pull request
 
 
