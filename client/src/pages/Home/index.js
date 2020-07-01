@@ -46,7 +46,7 @@ const Home = () => {
 
       setPokemons(data.pokemons)
       setFilteredData(data.pokemons)
-      
+
       if (dataLength === data.pokemons.length) {
         buttonMore.classList.add("no-poke")
         setButtonText("Ops! acabaram os pokemons :(")
