@@ -60,7 +60,7 @@ This project is a kind of study and a front-end challenge. Its main function is 
 ## Needing improvement  // To do
 - Apollo client cache:
   - cache fragments
-  - The Pokémon details page is reading data from the updated cache
+  - The Pokémon details page is not reading data from the updated cache
 - Write an issue if you find anything to improve or contribute making a pull request
 
 
