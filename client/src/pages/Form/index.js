@@ -51,6 +51,8 @@ const Form = () => {
         },
       },
     })
+
+    history.push("/")
   }
 
   useEffect(() => {

@@ -24,16 +24,16 @@
 
 ## What does it do
 
-This project is a kind of study and a front-end challenge. Its main function is to capture information from a GraphQL API (https://graphql-pokemon.now.sh/) that returns all classic Pokémon and their information and, using React, organize the data on the screen providing the user with the experience to find all the information of the desired pokemon.
+This project is a kind of study and a front-end challenge. Its main function is to capture information from a GraphQL API that returns all classic Pokémon and their information and, using React, organize the data on the screen providing the user with the experience to find all the information of the desired pokemon.
 
 ## Features
 
 - [✓] User friendly
+- [✓] Mobile friendly
 - [✓] List of all pokemons showing their names pokedex numbers and their main type color
 - [✓] Organizable and readable code (using ESlint)
 - [✓] Error component to handler 404 pages and Server error
 - [✓] Sort of pagination using a button to request more data from API
-- [✓] Apollo Client Cache
 
 
 ## Fast setup (CLI Version)
@@ -43,6 +43,21 @@ This project is a kind of study and a front-end challenge. Its main function is 
 3. Run `npm install` into `client` folder
 4. Start the project local via command line `npm start`
 5. The project now is running on `3000` port. 
+
+
+## Technology and resources
+- React JS (some libs as react-router, react-router-dom, apollo-cache-inmemory, node-sass, etc)
+- Apollo Client 
+- SASS
+- Consumes from a GraphQL API (https://graphql-pokemon.now.sh/)
+- Up
+
+
+## Needing improvement  // To do
+- Apollo client cache:
+  - cache fragments
+  - The Pokémon details page is not being read in the updated cache
+- Write an issue if you find anything to improve or contribute making a pull request
 
 
 :warning: :point_down:
