@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom"
 
 import { gql } from "apollo-boost"
 import { FaArrowLeft } from "react-icons/fa"
-import { POKEMON_BY_ID } from "../../helper/gqlQueries"
+import { POKEMON_BY_ID } from "../../services/apollo/gqlQueries"
 import { cache } from "../../services/apollo/apollo-connect"
 
 const Form = () => {

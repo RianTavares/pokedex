@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom"
 
 import { useQuery } from "@apollo/react-hooks"
 import { FaArrowLeft, FaEdit } from "react-icons/fa"
-import { POKEMON_BY_ID } from "../../helper/gqlQueries"
+import { POKEMON_BY_ID } from "../../services/apollo/gqlQueries"
 
 import pokeTypes from "../../assets/mocks/pokeTypes"
 import Types from "../../components/Types"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useQuery } from "@apollo/react-hooks"
 import Pokemon from "../../components/Pokemon"
 
-import { POKEMONS } from "../../helper/gqlQueries"
+import { POKEMONS } from "../../services/apollo/gqlQueries"
 
 const Home = () => {
   const [filteredData, setFilteredData] = useState([])
@@ -27,8 +27,6 @@ const Home = () => {
   }
 
   const handlerPagination = () => {
-    // if(first >= 151)
-
     setFirst(first + 20)
   }
 
@@ -48,14 +46,14 @@ const Home = () => {
 
       setPokemons(data.pokemons)
       setFilteredData(data.pokemons)
-
+      
       if (dataLength === data.pokemons.length) {
         buttonMore.classList.add("no-poke")
         setButtonText("Ops! acabaram os pokemos :(")
         buttonMore.disabled = true
       }
     }
-  }, [data, dataLength, loading])
+  }, [data, loading])
 
   return (
     <>
