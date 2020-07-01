@@ -26,6 +26,8 @@
 
 This project is a kind of study and a front-end challenge. Its main function is to capture information from a GraphQL API that returns all classic Pokémon and their information and, using React, organize the data on the screen providing the user with the experience to find all the information of the desired pokemon.
 
+<p align="center"><a href="https://github.com/RianTavares/pokedex" alt="exemplo de funcionamento"><img src="./imgs/exemplo.gif"></a></p>
+
 ## Features
 
 - [✓] User friendly
@@ -34,6 +36,8 @@ This project is a kind of study and a front-end challenge. Its main function is 
 - [✓] Organizable and readable code (using ESlint)
 - [✓] Error component to handler 404 pages and Server error
 - [✓] Sort of pagination using a button to request more data from API
+- [✓] [App up and running on Heroku](https://pokedexbyrian.herokuapp.com/)
+
 
 
 ## Fast setup (CLI Version)
