@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 
 import { useQuery } from "@apollo/react-hooks"
-import { FaArrowLeft } from "react-icons/fa"
-import { POKEMON_BY_ID } from "../../helper/gqlQueries"
+import { FaArrowLeft, FaEdit } from "react-icons/fa"
+import { POKEMON_BY_ID } from "../../services/apollo/gqlQueries"
 
 import pokeTypes from "../../assets/mocks/pokeTypes"
 import Types from "../../components/Types"
@@ -28,13 +28,17 @@ const Pokemon = () => {
     ? data.pokemon.types[0].toLowerCase()
     : null
 
-  const backHome = () => {
+  const handlerBackHome = () => {
     history.push("/")
+  }
+
+  const handlerEdit = () => {
+    history.push(`/form/${id}`)
   }
 
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
-  }, [type, error])
+  }, [type, data])
 
   return (
     <>
@@ -57,7 +61,7 @@ const Pokemon = () => {
           <button
             type="button"
             className="page-content__card__back-home"
-            onClick={backHome}
+            onClick={handlerBackHome}
           >
             <FaArrowLeft size={25} color="#c52018" /> <p> Voltar a Home</p>
           </button>
@@ -71,11 +75,18 @@ const Pokemon = () => {
                   #{data.pokemon.number} {data.pokemon.name}
                 </h1>
               </hgroup>
-              <div className="poke-details__header__type">
+              <div className="poke-details__header__type desk">
                 {data.pokemon.types.map((pokemonType) => {
                   return <Types key={pokemonType} type={pokemonType} />
                 })}
               </div>
+              <button
+                className="poke-details__header__button"
+                type="button"
+                onClick={handlerEdit}
+              >
+                <FaEdit size="25" />
+              </button>
             </header>
             <div className="poke-details__card">
               <div className="poke-details__card__infos">
@@ -84,6 +95,11 @@ const Pokemon = () => {
                     className="poke-details__card__infos__img-container__img"
                     style={{ backgroundImage: `url(${data.pokemon.image})` }}
                   />
+                </div>
+                <div className="poke-details__header__type mobi">
+                  {data.pokemon.types.map((pokemonType) => {
+                    return <Types key={pokemonType} type={pokemonType} />
+                  })}
                 </div>
                 <div className="poke-details__card__infos__personal">
                   <div className="poke-details__card__infos__personal__data">

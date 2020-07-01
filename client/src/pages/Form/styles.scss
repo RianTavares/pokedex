@@ -1,0 +1,35 @@
+/* form-cs = form client side */
+.form-cs {
+  display: flex;
+  flex-direction: column;
+
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  input {
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px $ONE_LIGHT_GRAY;
+    margin-top: 2px;
+  }
+
+  button {
+    margin-top: 24px;
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background-color: $ONE_YELLOW;
+  }
+
+  button:hover {
+    background-color: $THREE_YELLOW;
+  }
+
+  h3 {
+    margin-top: 8px;
+  }
+}

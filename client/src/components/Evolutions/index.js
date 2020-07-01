@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { useQuery } from "@apollo/react-hooks"
-import { POKEMON_BY_ID } from "../../helper/gqlQueries"
+import { POKEMON_BY_ID } from "../../services/apollo/gqlQueries"
 
 import Pokemon from "../Pokemon"
 
