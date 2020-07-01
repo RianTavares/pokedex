@@ -38,6 +38,11 @@ const Pokemon = () => {
 
   useEffect(() => {
     setCardColor(pokeTypes[`${type}`] ? pokeTypes[`${type}`] : "#003a70")
+
+    if(typeof data == 'undefined') {
+      history.push("/page/not-found")
+    }
+
   }, [type, data])
 
   return (

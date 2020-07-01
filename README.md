@@ -28,11 +28,13 @@ This project is a kind of study and a front-end challenge. Its main function is 
 
 ## Features
 
-- [✓] Easy to use
-- [✓] List all pokemons showing their names pokedex numbers and their main type color
 - [✓] User friendly
+- [✓] List of all pokemons showing their names pokedex numbers and their main type color
 - [✓] Organizable and readable code (using ESlint)
-- [✓] Error component to handler 404 pages, Server error and ID not found
+- [✓] Error component to handler 404 pages and Server error
+- [✓] Sort of pagination using a button to request more data from API
+- [✓] Apollo Client Cache
+
 
 ## Fast setup (CLI Version)
 
