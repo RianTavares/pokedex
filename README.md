@@ -21,8 +21,8 @@
   <a href="https://img.shields.io/david/RianTavares/pokedex?label=client%20dependencies&path=client">
     <img alt="Client Dependencies" src="https://img.shields.io/david/RianTavares/pokedex?label=client%20dependencies&path=client">
   </a>
-  <a href="https://heroku-badge.herokuapp.com/?app={pokedexbyrian}">
-    <img alt="Heroku Deployed" src="https://heroku-badge.herokuapp.com/?app={pokedexbyrian}">
+  <a href="https://heroku-badge.herokuapp.com/?app=pokedexbyrian">
+    <img alt="Heroku Deployed" src="https://heroku-badge.herokuapp.com/?app=pokedexbyrian">
   </a>
 </div>
 
