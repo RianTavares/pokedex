@@ -64,6 +64,10 @@ This project is a kind of study and a front-end challenge. Its main function is 
 - Apollo client cache:
   - cache fragments
   - The Pokémon details page is not reading data from the updated cache
+- API GraphQL:
+  - It seems that the API is often crashing and returning 503
+  - First option is to build an 503 error template
+  - Second option is to search another API
 - Write an issue if you find anything to improve or contribute making a pull request
 
 
