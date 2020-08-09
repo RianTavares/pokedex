@@ -12,17 +12,16 @@
    <a href="https://img.shields.io/github/license/RianTavares/pokedex?color=blue">
     <img alt="Githubs License" src="https://img.shields.io/github/license/RianTavares/pokedex?color=blue">
   </a>
-  </a>
-   <a href="https://img.shields.io/github/license/RianTavares/pokedex?color=blue">
-    <img alt="Githubs License" src="https://img.shields.io/github/license/RianTavares/pokedex?color=blue">
+  <a href="https://heroku-badge.herokuapp.com/?app=pokedexbyrian">
+    <img alt="Heroku Deployed" src="https://heroku-badge.herokuapp.com/?app=pokedexbyrian">
   </a>
 </div>
 <div align="center">
   <a href="https://img.shields.io/david/RianTavares/pokedex?label=client%20dependencies&path=client">
     <img alt="Client Dependencies" src="https://img.shields.io/david/RianTavares/pokedex?label=client%20dependencies&path=client">
   </a>
-  <a href="https://heroku-badge.herokuapp.com/?app=pokedexbyrian">
-    <img alt="Heroku Deployed" src="https://heroku-badge.herokuapp.com/?app=pokedexbyrian">
+  <a href="https://img.shields.io/david/dev/RianTavares/pokedex?label=client%20devDependencies&path=client">
+    <img alt="Client Dev Dependencies" src="https://img.shields.io/david/dev/RianTavares/pokedex?label=client%20devDependencies&path=client">
   </a>
 </div>
 
