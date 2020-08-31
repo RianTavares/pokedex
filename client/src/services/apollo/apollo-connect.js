@@ -2,7 +2,7 @@ import ApolloClient, { InMemoryCache } from "apollo-boost"
 import { IntrospectionFragmentMatcher } from "apollo-cache-inmemory"
 import introspectionQueryResultData from "./fragmentTypes.ts"
 
-const url = "https://graphql-pokemon.now.sh/"
+const url = "https://graphql-pokemon2.vercel.app"
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,
