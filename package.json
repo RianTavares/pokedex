@@ -26,6 +26,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "all-contributors-cli": "^6.20.0",
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
