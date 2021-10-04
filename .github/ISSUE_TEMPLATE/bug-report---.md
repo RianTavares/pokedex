@@ -5,7 +5,6 @@ title: "[Bug]: "
 labels: "type: bug \U0001F41B"
 assignees: RianTavares
 
----
 body:
   - type: markdown
     attributes:
@@ -59,3 +58,4 @@ body:
       description:
         'How do we reproduce the error you described using the CodeSandbox link
         above?'
+---
