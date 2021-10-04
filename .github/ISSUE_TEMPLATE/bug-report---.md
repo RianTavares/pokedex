@@ -6,8 +6,8 @@ labels: "type: bug \U0001F41B"
 assignees: RianTavares
 
 ---
-
-- type: markdown
+body:
+  - type: markdown
     attributes:
       value: '## Welcome!'
   - type: markdown
