@@ -1,10 +1,8 @@
----
-name: "Bug report \U0001F41B"
-about: Something not working as expected? This is the place to report your issue.
-title: "[Bug]: "
-labels: "type: bug \U0001F41B"
-assignees: RianTavares
-
+name: Bug report 🐛
+description:
+  Something not working as expected? This is the place to report your issue.
+title: '[Bug]: '
+labels: 'type: bug 🐛'
 body:
   - type: markdown
     attributes:
@@ -12,6 +10,28 @@ body:
   - type: markdown
     attributes:
       value: Thanks for taking the time to fill out this bug report.
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      description: Which package(s) are you using?
+      multiple: true
+      options:
+        - 'carbon-components'
+        - 'carbon-components-react'
+        - '@carbon/colors'
+        - '@carbon/elements'
+        - '@carbon/grid'
+        - '@carbon/icons'
+        - '@carbon/icons-react'
+        - '@carbon/icons-vue'
+        - '@carbon/layout'
+        - '@carbon/motion'
+        - '@carbon/pictograms'
+        - '@carbon/pictograms-react'
+        - '@carbon/themes'
+        - '@carbon/type'
+        - '@carbon/upgrade'
     validations:
       required: true
   - type: dropdown
@@ -58,4 +78,19 @@ body:
       description:
         'How do we reproduce the error you described using the CodeSandbox link
         above?'
----
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: Please confirm the following
+      options:
+        - label:
+            I agree to follow this project's [Code of
+            Conduct](https://github.com/carbon-design-system/carbon/blob/f555616971a03fd454c0f4daea184adf41fff05b/.github/CODE_OF_CONDUCT.md)
+          required: true
+        - label:
+            I checked the [current
+            issues](https://github.com/carbon-design-system/carbon/issues) for
+            duplicate problems
