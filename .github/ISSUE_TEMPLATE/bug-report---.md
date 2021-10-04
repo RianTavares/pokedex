@@ -1,0 +1,61 @@
+---
+name: "Bug report \U0001F41B"
+about: Something not working as expected? This is the place to report your issue.
+title: "[Bug]: "
+labels: "type: bug \U0001F41B"
+assignees: RianTavares
+
+---
+
+- type: markdown
+    attributes:
+      value: '## Welcome!'
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this bug report.
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser(s) are you experiencing the issue?
+      multiple: true
+      options:
+        - Chrome
+        - Safari
+        - Firefox
+        - Edge
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: 'Which version(s) are you using?'
+      placeholder: e.g. v10.42.0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Tell us more about the problem that you're running into"
+      placeholder: What did you see? What did you expect to see?
+    validations:
+      required: true
+  - type: input
+    id: example-url
+    attributes:
+      label: CodeSandbox example
+      description:
+        'Use our
+        [CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/carbon/tree/main/packages/react/examples/codesandbox)
+        to re-create the issue'
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description:
+        'How do we reproduce the error you described using the CodeSandbox link
+        above?'
