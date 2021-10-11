@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/react-hooks"
 import Pokemon from "../../components/Pokemon"
 
 import { POKEMONS } from "../../services/apollo/gqlQueries"
+import Error from "../Error"
 
 const Home = () => {
   const [filteredData, setFilteredData] = useState([])
@@ -63,7 +64,7 @@ const Home = () => {
         </div>
       )}
 
-      {error ? <p>template de error</p> : ""}
+      {error ? <Error/> : ""}
 
       {data && (
         <>
