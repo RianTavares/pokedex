@@ -1,6 +1,6 @@
 <p align="center"><a href="https://github.com/RianTavares/pokedex" alt="Pokedex by Rian Logo"><img src="./imgs/logo-pokedex-by-rian.png"></a></p>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center"><h1 align="center">Pokédex By Rian</h1></p>
@@ -92,6 +92,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://riantavares.github.io/"><img src="https://avatars.githubusercontent.com/u/8935295?v=4?s=100" width="100px;" alt=""/><br /><sub><b>@RianTavaresOn</b></sub></a><br /><a href="https://github.com/RianTavares/pokedex/commits?author=RianTavares" title="Code">💻</a> <a href="#design-RianTavares" title="Design">🎨</a> <a href="https://github.com/RianTavares/pokedex/commits?author=RianTavares" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://rafa1807.github.io/"><img src="https://avatars.githubusercontent.com/u/88994952?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rafael Ribeiro</b></sub></a><br /><a href="https://github.com/RianTavares/pokedex/commits?author=Rafa1807" title="Code">💻</a> <a href="#design-Rafa1807" title="Design">🎨</a></td>
   </tr>
 </table>
 

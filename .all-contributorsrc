@@ -20,6 +20,16 @@
         "design",
         "doc"
       ]
+    },
+    {
+      "login": "Rafa1807",
+      "name": "Rafael Ribeiro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88994952?v=4",
+      "profile": "https://rafa1807.github.io/",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7
