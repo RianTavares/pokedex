@@ -63,7 +63,7 @@ This project is a kind of study and a front-end challenge. Its main function is 
 :warning: :point_down:
 
 - if you enjoyed about this project add a star :star: 
-- Don't forget to follow me on Instagram [@riantavareson](https://www.instagram.com/riantavareson/) :heart:
+- Don't forget to follow me on Instagram [@riantavares.dev](https://www.instagram.com/riantavares.dev/) :heart:
 - And follow me also here on [github](https://github.com/RianTavares) :)
 - Don't go away without contribute, PRs are welcome!
 
