@@ -1,7 +1,4 @@
 <p align="center"><a href="https://github.com/RianTavares/pokedex" alt="Pokedex by Rian Logo"><img src="./imgs/logo-pokedex-by-rian.png"></a></p>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center"><h1 align="center">Pokédex By Rian</h1></p>
 
